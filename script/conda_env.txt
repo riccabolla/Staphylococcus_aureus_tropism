@@ -1,0 +1,7 @@
+To create the conda environment to install the required packages in quality.sh do:
+1) Create the env by using "conda create -n qcheck". 
+2) Install the following packages:
+  conda install -c bioconda fastp
+  conda install -c bioconda fastqc
+  conda install -c bioconda multiqc 
+
