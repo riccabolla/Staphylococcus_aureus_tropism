@@ -37,12 +37,13 @@ In the main directory launch [quality.sh](./script/quality.sh).
 # Statistical Analysis
 1) Download the files in the [reference_files](./reference_files/). 
 2) Download [Rstudio](https://posit.co/download/rstudio-desktop/)
-3) To install all the required packages launch [required_packages.R](./Statistical_analysis/required_packages.R) file. 
+3) To install all the required packages launch [required_packages.R](./Statistical_analysis/required_packages.R).
+4) Create a folder named "Plot" 
 ## Assembly stats
-1) Open the [Assembly_stats.R](./Statistical_analysis/Assembly_stats.R) script, set as working directory where you downloaded the reference files and launch it.
+1) Launch [Assembly_stats.R](./Statistical_analysis/Assembly_stats.R) 
 ## Clonal Complex analysis
-1) Download and open the [CC_analysis.R](./Statistical_analysis/CC_analysis.R), set as working directory where you downloaded the reference files and launch it.
+1) Launch [CC_analysis.R](./Statistical_analysis/CC_analysis.R) 
 ## Virulence genes analysis
-
+1) Launch [Vf_chisqr.R](./Statistical_analysis/Vf_chisqr.R)
 
 
