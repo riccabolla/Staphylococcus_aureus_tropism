@@ -10,4 +10,6 @@ for folder in */; do
         fi
     done
     cd ../
+rename 's/_pass_1/_R1/' *.fastq.gz
+rename 's/_pass_2/_R2/' *.fastq.gz
 done
