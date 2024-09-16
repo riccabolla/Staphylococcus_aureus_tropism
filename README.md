@@ -40,8 +40,9 @@ In the main directory launch [quality.sh](./script/quality.sh).
 3) To install all the required packages launch [required_packages.R](./Statistical_analysis/required_packages.R) file. 
 ## Assembly stats
 1) Open the [Assembly_stats.R](./Statistical_analysis/Assembly_stats.R) script, set as working directory where you downloaded the reference files and launch it.
-## Inferential analysis
-1) 
+## Clonal Complex analysis
+1) Download and open the [CC_analysis.R](./Statistical_analysis/CC_analysis.R), set as working directory where you downloaded the reference files and launch it.
+## Virulence genes analysis
 
 
 
