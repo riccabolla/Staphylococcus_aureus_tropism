@@ -1,47 +1,71 @@
 library(readxl)
 library(tidyverse)
 
-data_long <- read_xlsx("CC_analysis.xlsx") %>%
-  pivot_longer(cols = -c(Source, Total), names_to = "CC", values_to = "Count")
+data <- read_xlsx("CC_analysis.xlsx")
+data
 
-ggplot(data_long, aes(x = CC, y = Count, fill = Source)) +
-  geom_bar(stat = "identity") +
+data_long <- data %>%
+  pivot_longer(cols = -c(Source, Total), names_to = "CC", values_to = "Count") 
+
+ggplot(data_long) + 
+  geom_bar(mapping = aes(x = CC, y = Count, fill = Source),
+           stat = "identity") +
   facet_wrap(~ Source) +
   theme_classic() +
-  scale_y_continuous(expand = c(0,0)) 
-ggsave("CC_distribution.jpg", dpi = 300)
-
+  scale_y_continuous(expand = c(0,0))
+ggsave("CC_distribution.jpg", dpi = 300, path = "Plot/")
 
 results <- data_long %>%
   group_by(CC) %>%
   summarize(
-    p_value = chisq.test(Count, p = Total / sum(Total))$p.value,
+    ChiSqTest = list(chisq.test(Count, p = Total / sum(Total))), 
+    p_value = map_dbl(ChiSqTest, "p.value"),
     adj_p_value = p.adjust(p_value, method = "fdr")
   )
 
-
-ggplot(results, aes(x = CC, y = -log10(adj_p_value), colour = CC)) +
-  geom_point() +
-  labs(title = "ChiSqr results") +
+ggplot(results) +
+  geom_point(mapping = aes(x = CC, y = -log10(adj_p_value), colour = CC))+
+  labs(title = "ChiSqr results") + 
   theme_classic()
+ggsave("CC_chisqr.jpg", dpi = 300, path = "Plot/")
 
 adj_standardized_residuals <- data_long %>%
   left_join(results, by = "CC") %>%
   mutate(
     expected = sum(Count) * (Total / sum(Total)),
-    adj_std_residual = (Count - expected) / sqrt(expected * (1 - Total / sum(Total)) * (1 - Count / sum(Count)))
+    row_prop = Total / sum(Total),
+    col_prop = Count / sum(Count),
+    adj_std_residual = (Count - expected) / sqrt(expected * (1 - row_prop) * (1 - col_prop))
   )
 
 
 significant_associations <- adj_standardized_residuals %>%
   filter(adj_p_value < 0.01) %>%
-  select(Source, adj_std_residual, CC)
+  select(Source, adj_p_value, adj_std_residual, CC)
+significant_associations
 
+ggplot(significant_associations) + 
+  geom_tile(mapping = aes(x = Source, y = CC, fill = adj_std_residual)) + 
+  scale_fill_gradient2(low = "blue", high = "red") + 
+  theme_classic() + 
+  labs(x = "Infection" ,
+       title = "Correlation results", 
+       subtitle = "* P_value < 0.01 (FDR adjusted)") +
+  geom_text(mapping = aes(x = Source,
+                          y = CC,  
+                          label = round(adj_std_residual,2))) +
+  theme(plot.subtitle = element_text(size = 8.0),
+        plot.title = element_text(hjust = 0.5)) 
+ggsave("CC_adj_values.jpg", dpi = 300, path = "Plot/")
 
-ggplot(significant_associations, aes(x = Source, y = CC, fill = adj_std_residual)) + 
-  geom_tile() +
-  scale_fill_gradient2(low = "blue", high = "red") +
-  geom_text(aes(label = round(adj_std_residual, 2))) +
-  labs(x = "Infection", title = "Correlation results", subtitle = "* P_value < 0.01 (FDR adjusted)") +
-  theme_classic() +
-  theme(plot.subtitle = element_text(size = 8), plot.title = element_text(hjust = 0.5))
+data2 <- read_xlsx("CC_vf_analysis.xlsx", na = "NA")
+data2 <- drop_na(data2)
+data2$gene_count <- rowSums(data2[, 5:ncol(data2)] == 1)
+ggplot(data2, aes(x = CC, y = gene_count, fill = CC)) +
+  geom_boxplot() +
+  labs(x = "Clonal Complex (CC)", y = "Number of Virulence genes", 
+       title = "Gene Presence by CC") +
+  theme_classic()+
+  scale_y_continuous(limits = c(40,81))
+
+ggsave("CC_gene_presence.jpg", dpi = 300, path = "Plot/")
