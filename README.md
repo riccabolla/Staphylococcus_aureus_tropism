@@ -5,9 +5,8 @@ Tropism, defined as the tendency of a bacteria to spread in specific tissues, ha
 ## Creating folders
 First, go to your main directory and create the folders "sra" and "sra_filtered". 
 ## Set the environment
-All analysis will be done using [conda](https://conda.io/projects/conda/en/latest/index.html). 
-To install conda go here: (https://conda.io/projects/conda/en/latest/user-guide/install/index.html) 
-To set the conda environment for the analysis look at [conda_env.txt](./script/conda_env.txt)
+1) Install [conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) 
+2) Set the conda environment following the instructions in [conda_env.txt](./script/conda_env.txt)
 
 ## Downloading the SRA Files
 The analyzed files were downloaded from the following public projects:
