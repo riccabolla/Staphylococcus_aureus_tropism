@@ -37,9 +37,9 @@ In the main directory launch [quality.sh](./script/quality.sh).
 # Statistical Analysis
 1) Download the files in the [reference_files](./reference_files/). 
 2) Download [Rstudio](https://posit.co/download/rstudio-desktop/)
-3) Install all the packages present in the [packages.txt](./packages.txt) file. 
+3) To install all the required packages launch [required_packages.R](./Statistical_analysis/required_packages.R) file. 
 ## Assembly stats
-1) Open the Assembly_stats.R script, set as working directory where you downloaded the reference files and launch it.
+1) Open the [Assembly_stats.R](./Statistical_analysis/Assembly_stats.R) script, set as working directory where you downloaded the reference files and launch it.
 ## Inferential analysis
 1) 
 
