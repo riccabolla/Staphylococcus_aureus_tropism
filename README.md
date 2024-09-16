@@ -9,5 +9,19 @@ The analyzed files were downloaded from the following public projects:
 3) Endocarditis: [PRJEB21660](https://www.ebi.ac.uk/ena/browser/view/PRJEB21660)
 
 For the list of downloaded samples see [sample_list.txt](./sample_list.txt)
+To use SRA toolkit look at [SRA_toolkit.txt](./SRA_toolkit.tx)
+
+## Quality control
+To check quality of downloaded fastq files go to the sra folder and lunch the quality.sh script present in the [script](./script) folder. 
+
+## Contamination check
+To check the contamination go the sra_filtered folder and lunch the kraken.sh script present in the [script](./script)
+
+## WGS analysis
+The analysis steps have been performed using the [bactopia](https://bactopia.github.io/latest/) tool.
+Go to the sra_filtered folder and lunch bactopia.sh present in the [script](./script)
+
+
+
 
 
