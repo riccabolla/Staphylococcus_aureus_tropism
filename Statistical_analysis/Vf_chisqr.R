@@ -4,7 +4,7 @@ library(ggplot2)
 library(DescTools)
 
 
-data <- read_xlsx("Vf_analisi.xlsx")
+data <- read_xlsx("Vf_analysis.xlsx")
 
 
 head(data)
