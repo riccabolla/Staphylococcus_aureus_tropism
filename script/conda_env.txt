@@ -1,12 +1,15 @@
 To create the conda environment to install the required packages do:
-# Create the quality check env by using "conda create -n qcheck". 
+# Create the quality check env 
+Conda create -n qcheck 
 Conda activate qcheck
 conda install -c bioconda fastp
 conda install -c bioconda fastqc
 conda install -c bioconda multiqc 
-# Create the kraken env by using "conda create -n kraken"
+# Create the kraken env 
+Conda create -n kraken
 Conda activate kraken
 conda install -c bioconda kraken2 
-# Create the bactopia env by using "conda create -n bactopia"
+# Create the bactopia env 
+Conda create -n bactopia
 Conda activate bactopia
 
