@@ -20,20 +20,20 @@ To install the SRA toolkit follow the [instructions](https://www.ncbi.nlm.nih.go
 To download the samples, use the "prefetch" function (https://www.ncbi.nlm.nih.gov/sra/docs/sradownload/). 
 
 ## From .sra to .fastq
-Move all downloaded folders containing the .sra files to the folder named "sra". 
-Go to the "sra" folder and launch [fastqdump.sh](./script/fastqdump.sh).
+1) Move all downloaded folders containing the .sra files to the folder named "sra". 
+2) Go to the "sra" folder and launch [fastqdump.sh](./script/fastqdump.sh).
 
 ## Quality control
 In the main directory launch [quality.sh](./script/quality.sh).
 
 ## Contamination check
-To check the contamination go to the sra_filtered folder and launch [kraken.sh](./script/kraken.sh). 
-The database used for the analysis is kraken_standard_8 (download here: https://benlangmead.github.io/aws-indexes/k2).
-After the extraction, rename the folder containing the .k2d file in "kraken_bacteria" 
+1) Go to the sra_filtered folder and launch [kraken.sh](./script/kraken.sh). 
+2) The database used for the analysis is kraken_standard_8 (download here: https://benlangmead.github.io/aws-indexes/k2).
+3) Rename the folder containing the .k2d file in "kraken_bacteria" 
 
 ## WGS analysis
-The analysis steps have been performed using the [bactopia](https://bactopia.github.io/latest/) tool.
-Go to the main directory and lunch [bactopia.sh](./script/bactopia.sh).
+1) The analysis steps have been performed using the [bactopia](https://bactopia.github.io/latest/) tool.
+2) Go to the main directory and lunch [bactopia.sh](./script/bactopia.sh).
 
 
 
