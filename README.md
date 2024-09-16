@@ -11,16 +11,17 @@ The analyzed files were downloaded from the following public projects:
 2) Joint and Bone Infection: [PRJNA765573](https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA765573) and [PRJNA784720](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA784720/)
 3) Endocarditis: [PRJEB21660](https://www.ebi.ac.uk/ena/browser/view/PRJEB21660)
 
-For the list of downloaded samples see [sample_list.txt](./sample_list.txt)
-To use SRA toolkit look at [SRA_toolkit.txt](./SRA_toolkit.tx).
+For the list of downloaded samples look at [sample_list.txt](./sample_list.txt). 
+To install the SRA toolkit follow the [instructions](https://www.ncbi.nlm.nih.gov/sra/docs/sradownload/). 
+To download the samples, use the "prefetch" function (https://www.ncbi.nlm.nih.gov/sra/docs/sradownload/). 
 
 ## From .sra to .fastq
 Move all downloaded folders containing the .sra files to the folder named "sra". 
 Go to the "sra" folder and lunch the fastqdump.sh script in the [script](./script) folder. 
+Rename all the samples using the [rename.sh](./script/rename.sh) script.
+
 
 ## Quality control
-In your main directory create two folders named "sra" and "sra_filtered". 
-Put the fastq files in the sra folder.
 In the main directory lunch the quality.sh script present in the [script](./script) folder. 
 
 ## Contamination check
