@@ -5,20 +5,10 @@ library(DescTools)
 
 
 data <- read_xlsx("Vf_analysis.xlsx")
-
-
-head(data)
-
-
 gene_variance <- apply(data, 2, var)
-gene_variance
-gene_zero_variance <- which(gene_variance==0)
-names(gene_zero_variance)
 genes_no_zero_variance <- which(gene_variance != 0)
-genes_no_zero_variance
 
 gene_names <- names(genes_no_zero_variance)
-gene_names
 
 gene_presence_counts <- data %>%
   
@@ -50,13 +40,11 @@ post_hoc_results_list <- list()
 for (gene_name in gene_names) {
   
   cont_table <- table(Source = data$Source, Gene = data[[gene_name]])
-  
-  
+    
   chi_res <- chisq.test(cont_table)
   
   V <- CramerV(cont_table, bias.correct = TRUE)
-  
-  
+    
   chi_square_results <- rbind(chi_square_results, data.frame(
     Gene = gene_name,
     Chi_Squared = as.numeric(chi_res$statistic),
@@ -91,17 +79,9 @@ for (gene_name in chi_square_results_filtered$Gene) {
              by = c("Gene", "Source")) %>%
     select(-Presence_Count, -Absence_Count, -Total_Count) %>% 
     mutate(P_value_adj = chi_square_results$P_value_adj[chi_square_results$Gene == gene_name])
-    
-    
-  #eventually add here the odds_ratio code
-  
+ 
   post_hoc_results_list[[gene_name]] <- adj_std_residuals_df
 }
-
-chi_square_results_filtered
-summary(chi_square_results_filtered)
-
-post_hoc_results_list
 
 final_correlation_list <- lapply(post_hoc_results_list, function(df) {
   df %>%
@@ -118,9 +98,6 @@ final_correlation_list <- lapply(post_hoc_results_list, function(df) {
            Abs_freq = Absence_Frequency) 
 }) %>%
   bind_rows()
-chi_square_results_filtered
-
-final_correlation_list
 
 write.csv(final_correlation_list, "final_correlation.csv")
 
