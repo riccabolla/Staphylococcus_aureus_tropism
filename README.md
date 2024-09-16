@@ -27,7 +27,7 @@ Go to the "sra" folder and launch [fastqdump.sh](./script/fastqdump.sh).
 In the main directory launch [quality.sh](./script/quality.sh).
 
 ## Contamination check
-To check the contamination go the sra_filtered folder and lunch the kraken.sh script present in the [script](./script) folder. 
+To check the contamination go to the sra_filtered folder and launch [kraken.sh](./script/kraken.sh). 
 The database used for the analysis is kraken_standard_8 (download here: https://benlangmead.github.io/aws-indexes/k2).
 After the extraction, rename the folder containing the .k2d file in "kraken_bacteria" 
 
