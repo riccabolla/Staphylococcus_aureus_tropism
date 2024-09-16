@@ -26,9 +26,9 @@ c) Endocarditis: [PRJEB21660](https://www.ebi.ac.uk/ena/browser/view/PRJEB21660)
 In the main directory launch [quality.sh](./script/quality.sh).
 
 ## Contamination check
-1) Go to the sra_filtered folder and launch [kraken.sh](./script/kraken.sh). 
-2) The database used for the analysis is kraken_standard_8 (download here: https://benlangmead.github.io/aws-indexes/k2).
-3) Rename the folder containing the .k2d file in "kraken_bacteria" 
+1) The database used for the analysis is kraken_standard_8 (download here: https://benlangmead.github.io/aws-indexes/k2).
+2) Rename the folder containing the .k2d file in "kraken_bacteria"
+3) 1) Go to the sra_filtered folder and launch [kraken.sh](./script/kraken.sh). 
 
 ## WGS analysis
 1) The analysis steps have been performed using the [bactopia](https://bactopia.github.io/latest/) tool.
