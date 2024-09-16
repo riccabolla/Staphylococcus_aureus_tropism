@@ -12,7 +12,9 @@ For the list of downloaded samples see [sample_list.txt](./sample_list.txt)
 To use SRA toolkit look at [SRA_toolkit.txt](./SRA_toolkit.tx)
 
 ## Quality control
-To check quality of downloaded fastq files go to the sra folder and lunch the quality.sh script present in the [script](./script) folder. 
+In your main directory create two folders named "sra" and "sra_filtered". 
+Put the fastq files in the sra folder.
+In the main directory lunch the quality.sh script present in the [script](./script) folder. 
 
 ## Contamination check
 To check the contamination go the sra_filtered folder and lunch the kraken.sh script present in the [script](./script)
