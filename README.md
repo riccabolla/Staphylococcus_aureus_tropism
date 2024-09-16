@@ -45,5 +45,6 @@ In the main directory launch [quality.sh](./script/quality.sh).
 1) Launch [CC_analysis.R](./Statistical_analysis/CC_analysis.R) 
 ## Virulence genes analysis
 1) Launch [Vf_chisqr.R](./Statistical_analysis/Vf_chisqr.R)
+2) Launch [Vf_chisqr_Plots.R](./Statistical_analysis/Vf_chisqr_Plots.R)
 
 
