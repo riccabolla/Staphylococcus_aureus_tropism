@@ -33,7 +33,7 @@ In the main directory launch [quality.sh](./script/quality.sh).
 
 ## WGS analysis
 1) The analysis steps have been performed using the [bactopia](https://bactopia.github.io/latest/) tool.
-2) Go to the main directory and lunch [bactopia.sh](./script/bactopia.sh).
+2) Go to the main directory and launch [bactopia.sh](./script/bactopia.sh).
 
 
 
