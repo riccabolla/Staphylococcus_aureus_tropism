@@ -5,9 +5,9 @@ Tropism, defined as the tendency of a bacteria to spread in specific tissues, ha
 ## Creating folders
 First, go to your main directory and create the folders "sra" and "sra_filtered". 
 ## Set the environment
-All analysis will be done using [conda](). 
-To install conda go here: () 
-To set the conda environment for the analysis look at [conda_env.txt](./conda_env.txt)
+All analysis will be done using [conda](https://conda.io/projects/conda/en/latest/index.html). 
+To install conda go here: (https://conda.io/projects/conda/en/latest/user-guide/install/index.html) 
+To set the conda environment for the analysis look at [conda_env.txt](./script/conda_env.txt)
 
 ## Downloading the SRA Files
 The analyzed files were downloaded from the following public projects:
@@ -35,7 +35,7 @@ After the extraction, rename the folder containing the .k2d file in "kraken_bact
 
 ## WGS analysis
 The analysis steps have been performed using the [bactopia](https://bactopia.github.io/latest/) tool.
-Go to the sra_filtered folder and lunch bactopia.sh present in the [script](./script) folder.
+Go to the main directory and lunch [bactopia.sh](./script/bactopia.sh).
 
 
 
