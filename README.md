@@ -13,7 +13,7 @@ To use SRA toolkit look at [SRA_toolkit.txt](./SRA_toolkit.tx).
 
 ## From .sra to .fastq
 Move all downloaded folders containing the .sra files to the folder named "sra". 
-For fastqdump, go to the "sra" folder and lunch the fastqdump.sh script in the [script](./script) folder. 
+Go to the "sra" folder and lunch the fastqdump.sh script in the [script](./script) folder. 
 
 ## Quality control
 In your main directory create two folders named "sra" and "sra_filtered". 
