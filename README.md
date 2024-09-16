@@ -8,6 +8,6 @@ The analyzed files were downloaded from the following public projects:
 2) Joint and Bone Infection: [PRJNA765573](https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA765573) and [PRJNA784720](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA784720/)
 3) Endocarditis: [PRJEB21660](https://www.ebi.ac.uk/ena/browser/view/PRJEB21660)
 
-For the list of downloaded samples see [sample_list.md](./sample_list.md)
+For the list of downloaded samples see [sample_list.txt](./sample_list.txt)
 
 
