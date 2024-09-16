@@ -10,7 +10,8 @@ The analyzed files were downloaded from the following public projects:
 
 For the list of downloaded samples see [sample_list.txt](./sample_list.txt)
 To use SRA toolkit look at [SRA_toolkit.txt](./SRA_toolkit.tx).
-For fastqdump, use the fastqdump.sh script in the [script](./script) folder. 
+Move all downloaded samples to the folder named "sra". 
+For fastqdump, go to the "sra" folder and lunch the fastqdump.sh script in the [script](./script) folder. 
 
 ## Quality control
 In your main directory create two folders named "sra" and "sra_filtered". 
