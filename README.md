@@ -4,6 +4,10 @@ This repository is for the Master Thesis in Omics Data Analysis from University 
 Tropism, defined as the tendency of a bacteria to spread in specific tissues, has therefore a determinant role in influencing natural history, severity and outcome of invasive infections by S. aureus.   However, very few is known about S. aureus differential tropism, and no specific marker is used as diagnostic and prognostic determinant of invasive and complicated S. aureus infections in clinical practice. This unmet need represents an important gap to fill, to improve prevention, diagnosis, and advancing research efforts to fight S. aureus infections. This preliminary study aims to screen for known and novel genomic determinants associated with S. aureus tropism and virulence, based on available whole genome sequences of S. aureus from public databases.
 ## Creating folders
 First, go to your main directory and create the folders "sra" and "sra_filtered". 
+## Set the environment
+All analysis will be done using [conda](). 
+To install conda go here: () 
+To set the conda environment for the analysis look at [conda_env.txt](./conda_env.txt)
 
 ## Downloading the SRA Files
 The analyzed files were downloaded from the following public projects:
@@ -17,12 +21,12 @@ To download the samples, use the "prefetch" function (https://www.ncbi.nlm.nih.g
 
 ## From .sra to .fastq
 Move all downloaded folders containing the .sra files to the folder named "sra". 
-Go to the "sra" folder and lunch the fastqdump.sh script in the [script](./script) folder. 
+Go to the "sra" folder and launch [fastqdump.sh](./script/fastqdump.sh) 
 Rename all the samples using the [rename.sh](./script/rename.sh) script.
 
 
 ## Quality control
-In the main directory lunch the quality.sh script present in the [script](./script) folder. 
+In the main directory launch [quality.sh](./script/quality.sh).
 
 ## Contamination check
 To check the contamination go the sra_filtered folder and lunch the kraken.sh script present in the [script](./script) folder. 
