@@ -4,9 +4,9 @@ Conda activate qcheck
 conda install -c bioconda fastp
 conda install -c bioconda fastqc
 conda install -c bioconda multiqc 
-# Create the kraken contamination check env by using "conda create -n kraken"
+# Create the kraken env by using "conda create -n kraken"
 Conda activate kraken
 conda install -c bioconda kraken2 
-# Create the kraken contamination check env by using "conda create -n bactopia"
+# Create the bactopia env by using "conda create -n bactopia"
 Conda activate bactopia
 
