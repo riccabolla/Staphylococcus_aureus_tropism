@@ -10,13 +10,13 @@ First, go to your main directory and create the folders "sra" and "sra_filtered"
 
 ## Downloading the SRA Files
 The analyzed files were downloaded from the following public projects:
-1) Bloodstream Infection: [PRJDB11172](https://ddbj.nig.ac.jp/search/entry/bioproject/PRJDB11172) and [PRJNA673382](https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA673382)
-2) Joint and Bone Infection: [PRJNA765573](https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA765573) and [PRJNA784720](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA784720/)
-3) Endocarditis: [PRJEB21660](https://www.ebi.ac.uk/ena/browser/view/PRJEB21660)
+a) Bloodstream Infection: [PRJDB11172](https://ddbj.nig.ac.jp/search/entry/bioproject/PRJDB11172) and [PRJNA673382](https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA673382)
+b) Joint and Bone Infection: [PRJNA765573](https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA765573) and [PRJNA784720](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA784720/)
+c) Endocarditis: [PRJEB21660](https://www.ebi.ac.uk/ena/browser/view/PRJEB21660)
 
-For the list of downloaded samples look at [sample_list.txt](./sample_list.txt). 
-To install the SRA toolkit follow the [instructions](https://www.ncbi.nlm.nih.gov/sra/docs/sradownload/). 
-To download the samples, use the "prefetch" function (https://www.ncbi.nlm.nih.gov/sra/docs/sradownload/). 
+1) Donwload samples listed in [sample_list.txt](./sample_list.txt). 
+2) Install the SRA toolkit following the [instructions](https://www.ncbi.nlm.nih.gov/sra/docs/sradownload/). 
+3) Use the "prefetch" function (https://www.ncbi.nlm.nih.gov/sra/docs/sradownload/). 
 
 ## From .sra to .fastq
 1) Move all downloaded folders containing the .sra files to the folder named "sra". 
