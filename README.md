@@ -18,6 +18,7 @@ In the main directory lunch the quality.sh script present in the [script](./scri
 
 ## Contamination check
 To check the contamination go the sra_filtered folder and lunch the kraken.sh script present in the [script](./script)
+The database used for the analysis is kraken_standard_8 (download here: https://benlangmead.github.io/aws-indexes/k2)  
 
 ## WGS analysis
 The analysis steps have been performed using the [bactopia](https://bactopia.github.io/latest/) tool.
