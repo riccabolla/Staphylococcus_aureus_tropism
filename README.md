@@ -21,9 +21,7 @@ To download the samples, use the "prefetch" function (https://www.ncbi.nlm.nih.g
 
 ## From .sra to .fastq
 Move all downloaded folders containing the .sra files to the folder named "sra". 
-Go to the "sra" folder and launch [fastqdump.sh](./script/fastqdump.sh) 
-Rename all the samples using the [rename.sh](./script/rename.sh) script.
-
+Go to the "sra" folder and launch [fastqdump.sh](./script/fastqdump.sh).
 
 ## Quality control
 In the main directory launch [quality.sh](./script/quality.sh).
