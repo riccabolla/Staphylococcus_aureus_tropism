@@ -34,7 +34,14 @@ In the main directory launch [quality.sh](./script/quality.sh).
 1) The analysis steps have been performed using the [bactopia](https://bactopia.github.io/latest/) tool.
 2) Go to the main directory and launch [bactopia.sh](./script/bactopia.sh).
 
-
+# Statistical Analysis
+1) Download the files in the [reference_files](./reference_files/). 
+2) Download [Rstudio](https://posit.co/download/rstudio-desktop/)
+3) Install all the packages present in the [packages.txt](./packages.txt) file. 
+## Assembly stats
+1) Open the Assembly_stats.R script, set as working directory where you downloaded the reference files and launch it.
+## Inferential analysis
+1) 
 
 
 
