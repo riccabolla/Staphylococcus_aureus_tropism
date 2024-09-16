@@ -9,7 +9,8 @@ The analyzed files were downloaded from the following public projects:
 3) Endocarditis: [PRJEB21660](https://www.ebi.ac.uk/ena/browser/view/PRJEB21660)
 
 For the list of downloaded samples see [sample_list.txt](./sample_list.txt)
-To use SRA toolkit look at [SRA_toolkit.txt](./SRA_toolkit.tx)
+To use SRA toolkit look at [SRA_toolkit.txt](./SRA_toolkit.tx).
+For fastqdump, use the fastqdump.sh script in the [script](./script) folder. 
 
 ## Quality control
 In your main directory create two folders named "sra" and "sra_filtered". 
