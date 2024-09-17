@@ -14,7 +14,7 @@ fastqc *_filtered.fastq.gz
 multiqc .
 
 conda deactivate 
-
+mkdir QC
 mv *html QC/
 
 done
