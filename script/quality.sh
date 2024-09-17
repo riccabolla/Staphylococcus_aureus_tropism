@@ -1,8 +1,5 @@
 #!/bin/bash	
 
-input_dir="sra/"
-output_dir="sra_filtered"
-
 source activate qcheck
 
 for file in sra/*_R1.fastq.gz; do
