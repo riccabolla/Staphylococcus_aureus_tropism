@@ -14,8 +14,8 @@ a) Bloodstream Infection: [PRJDB11172](https://ddbj.nig.ac.jp/search/entry/biopr
 b) Joint and Bone Infection: [PRJNA765573](https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA765573) and [PRJNA784720](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA784720/)
 c) Endocarditis: [PRJEB21660](https://www.ebi.ac.uk/ena/browser/view/PRJEB21660)
 
-1) Donwload samples listed in [sample_list.txt](./sample_list.txt). 
-2) Install the SRA toolkit following the [instructions](https://www.ncbi.nlm.nih.gov/sra/docs/sradownload/). 
+1) Install the SRA toolkit following the [instructions](https://www.ncbi.nlm.nih.gov/sra/docs/sradownload/). 
+2) Donwload samples listed in [sample_list.txt](./sample_list.txt).
 3) Use the "prefetch" function (https://www.ncbi.nlm.nih.gov/sra/docs/sradownload/). 
 
 ## From .sra to .fastq
@@ -28,7 +28,7 @@ In the main directory launch [quality.sh](./script/quality.sh).
 ## Contamination check
 1) The database used for the analysis is kraken_standard_8 (download here: https://benlangmead.github.io/aws-indexes/k2).
 2) Rename the folder containing the .k2d file in "kraken_bacteria"
-3) 1) Go to the sra_filtered folder and launch [kraken.sh](./script/kraken.sh). 
+3) Go to the sra_filtered folder and launch [kraken.sh](./script/kraken.sh). 
 
 ## WGS analysis
 1) The analysis steps have been performed using the [bactopia](https://bactopia.github.io/latest/) tool.
