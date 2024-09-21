@@ -10,6 +10,5 @@ Conda create -n kraken
 Conda activate kraken
 conda install -c bioconda kraken2 
 # Create the bactopia env 
-Conda create -n bactopia
-Conda activate bactopia
+conda create -n bactopia -c conda-forge -c bioconda bactopia
 
