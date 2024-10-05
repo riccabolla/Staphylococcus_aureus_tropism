@@ -44,7 +44,7 @@ In the main directory launch [quality.sh](./script/quality.sh).
 ## Clonal Complex analysis
 1) Launch [CC_analysis.R](./Statistical_analysis/CC_analysis.R) 
 ## Virulence genes analysis
-1) Launch [Anova_inf_gene_count.R](./Statistical_analysis/Anova_inf_gene_count.R)
+1) Launch [Median_N_gene_infection.R](./Statistical_analysis/Median_N_gene_infection.R)
 2) Launch [Vf_chisqr.R](./Statistical_analysis/Vf_chisqr.R)
 3) Launch [Vf_chisqr_Plots.R](./Statistical_analysis/Vf_chisqr_Plots.R)
 ## Logistic regression
