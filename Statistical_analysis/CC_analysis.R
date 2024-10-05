@@ -7,6 +7,7 @@ data
 data_long <- data %>%
   pivot_longer(cols = -c(Source, Total), names_to = "CC", values_to = "Count") 
 
+# Analysis and plot of CC-infection association 
 ggplot(data_long) + 
   geom_bar(mapping = aes(x = CC, y = Count, fill = Source),
            stat = "identity") +
@@ -58,6 +59,7 @@ ggplot(significant_associations) +
         plot.title = element_text(hjust = 0.5)) 
 ggsave("CC_adj_values.jpg", dpi = 300, path = "Plot/")
 
+# Virulence genes distribution and median across CCs
 data2 <- read_xlsx("CC_vf_analysis.xlsx", na = "NA")
 data2 <- drop_na(data2)
 data2$gene_count <- rowSums(data2[, 5:ncol(data2)] == 1)
