@@ -4,6 +4,30 @@ library(gridExtra)
 
 assembly_data <- read_xlsx("Assembly_summary.xlsx", sheet = "Assembly_stats")
 
+# Table with median and IQR of assembly parameter before filtering low-quality assembly
+summary_table_pre <- assembly_data %>%
+  summarize(
+    Median_Completeness = median(Completeness),
+    IQR_Completeness = IQR(Completeness),
+    Median_Coverage = median(Coverage),
+    IQR_Coverage = IQR(Coverage),
+    Median_Contigs = median(Contigs),
+    IQR_Contigs = IQR(Contigs)
+  )
+
+post_assembly_data <- read_xlsx("Assembly_summary.xlsx", sheet = "Filt_assembly_stats ")
+
+# Table with median and IQR of assembly parameter after filtering low-quality assembly
+summary_table_post <- post_assembly_data %>%
+  summarize(
+    Median_Completeness = median(Completeness),
+    IQR_Completeness = IQR(Completeness),
+    Median_Coverage = median(Coverage),
+    IQR_Coverage = IQR(Coverage),
+    Median_Contigs = median(Contigs),
+    IQR_Contigs = IQR(Contigs)
+  )
+
 filt_assembly_data <- assembly_data %>%
   select(Completeness = `Completeness (%)`, 
          Coverage = `coverage x`, 
