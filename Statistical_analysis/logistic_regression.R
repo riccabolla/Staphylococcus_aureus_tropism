@@ -6,7 +6,7 @@ library(pROC)
 data <- read_xlsx("BSI_logistic_regression.xlsx")
 data$BSI <- as.factor(data$BSI)
 run_model_iteration <- function(train_data, test_data) {
-  train_control <- trainControl(method = "cv", number = 10)
+  train_control <- trainControl(method = "none")
   
   model <- train(BSI ~ esaC + essC + esxB + fnbB + lukF_PV + sdrD,
                  data = train_data, method = "glm", family = "binomial",
