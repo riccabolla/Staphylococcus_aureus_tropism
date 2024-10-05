@@ -61,11 +61,21 @@ ggsave("CC_adj_values.jpg", dpi = 300, path = "Plot/")
 data2 <- read_xlsx("CC_vf_analysis.xlsx", na = "NA")
 data2 <- drop_na(data2)
 data2$gene_count <- rowSums(data2[, 5:ncol(data2)] == 1)
+median_count <- data2 %>%
+  group_by(CC) %>%
+  summarise(median_gene_count = median(gene_count),
+            IQR_gene_count = IQR(gene_count))
+
+cc_colors <- c("CC1" = "#3734A6", "CC121" = "#4642D3", "CC15" = "#4D49E8", 
+               "CC22" = "#5550FF", "CC30" = "#714ED1", "CC45" = "#8C4BA2", 
+               "CC5" = "#965BAA", "CC8" = "#B0638A", "CC97" = "#C96A6A")
+
 ggplot(data2, aes(x = CC, y = gene_count, fill = CC)) +
   geom_boxplot() +
   labs(x = "Clonal Complex (CC)", y = "Number of Virulence genes", 
        title = "Gene Presence by CC") +
   theme_classic()+
-  scale_y_continuous(limits = c(40,81))
+  scale_y_continuous(limits = c(40,81))+
+  scale_fill_manual(values = cc_colors)
 
 ggsave("CC_gene_presence.jpg", dpi = 300, path = "Plot/")
