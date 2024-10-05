@@ -40,7 +40,8 @@ In the main directory launch [quality.sh](./script/quality.sh).
 3) To install all the required packages launch [required_packages.R](./Statistical_analysis/required_packages.R).
 4) Create the folder "Plot" 
 ## Assembly stats
-1) Launch [Assembly_stats.R](./Statistical_analysis/Assembly_stats.R) 
+1) Launch [Assembly_stats.R](./Statistical_analysis/Assembly_stats.R)
+2) Launch [checkM.R](./Statistical_analysis/checkM.R)
 ## Clonal Complex analysis
 1) Launch [CC_analysis.R](./Statistical_analysis/CC_analysis.R) 
 ## Virulence genes analysis
