@@ -49,3 +49,42 @@ assembly_plot <- grid.arrange(completeness_plot, coverage_plot, contig_plot, nco
 
 ggsave("Assembly_stat.jpg", plot = assembly_plot, dpi = 300)
 
+#OPTIONAL: Plot of all main assembly parameters 
+
+data <- read_xlsx("Assembly_plots_new.xlsx")
+str(data)
+data[,2:ncol(data)] <- lapply(data[,2:ncol(data)], as.numeric)
+str(data)
+data
+data_long <- data %>% 
+  pivot_longer(cols = -Assembly, names_to = "Assembly parameter", values_to = "val") 
+
+data_long$`Assembly parameter` <- as.factor(data_long$`Assembly parameter`)
+
+quast_lab <- c(
+  'annotator_total_CDS' = 'N CDS', 
+  '# contigs' = 'N. Contigs', 
+  'Largest contig' = 'Largest Alignement', 
+  'N50' = 'N50',
+  '# predicted genes (unique)' = 'N predicted unique genes', 
+  'Total length' = 'Assembly total length',
+  'coverage x' = 'Coverage depth', 
+  'Completeness (%)' = 'Completeness (%)',
+  'Contamination (%)' = 'Contamination (%)' 
+)
+
+ggplot(data_long, aes(x=`Assembly parameter`, y=val)) +
+  geom_boxplot(outliers = FALSE, width=1, aes(fill= `Assembly parameter`)) +
+  geom_jitter(shape=21 ,fill = 'lightgrey', height=0, width=0.1) +
+  theme_classic() +
+  facet_wrap(~`Assembly parameter`, scales='free_y', labeller = labeller(`Assembly parameter` = quast_lab), ncol=3) +  # Facet by 'type' and control columns
+  ylab('') + xlab('') +
+  scale_fill_brewer(palette="Set1")+
+  theme(
+    axis.text.x = element_blank(),  
+    axis.ticks.x = element_blank(), 
+    text = element_text(size=12),
+    strip.text = element_text(size=12))
+
+ggsave('Assembly_param.jpg', dpi = 300, path = 'Plot/') 
+
