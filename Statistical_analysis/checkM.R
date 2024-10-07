@@ -8,7 +8,7 @@ checkm_data <- checkm_data %>%
 checkm_data_long <- checkm_data %>% 
   pivot_longer(cols = -`Bin Id`, names_to = "CheckM parameter", values_to = "val") 
 
-quast_lab <- c(
+checkm_lab <- c(
   'Completeness (%)' = 'Completeness (%)',
   'Contamination (%)' = 'Contamination (%)' ,
   'gene_0' = '0 gene copy',
@@ -22,7 +22,7 @@ ggplot(checkm_data_long, aes(x=`CheckM parameter`, y=val)) +
   geom_boxplot(outliers = FALSE, width=1, aes(fill= `CheckM parameter`)) +
   geom_jitter(shape=21 ,fill = 'lightgrey', height=0, width=0.1) +
   theme_classic() +
-  facet_wrap(~ `CheckM parameter`, scales='free_y', labeller = labeller(`CheckM parameter` = quast_lab), ncol=3) +  # Facet by 'type' and control columns
+  facet_wrap(~ `CheckM parameter`, scales='free_y', labeller = labeller(`CheckM parameter` = checkm_lab), ncol=3) +  # Facet by 'type' and control columns
   ylab('') + xlab('') +
   scale_fill_brewer(palette="Set1")+
   theme(
