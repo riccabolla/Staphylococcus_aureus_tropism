@@ -51,7 +51,7 @@ ggsave("Assembly_stat.jpg", plot = assembly_plot, dpi = 300)
 
 #OPTIONAL: Plot of all main assembly parameters 
 
-data <- read_xlsx("Assembly_plots_new.xlsx")
+data <- read_xlsx("Assembly_plots_optional.xlsx")
 str(data)
 data[,2:ncol(data)] <- lapply(data[,2:ncol(data)], as.numeric)
 str(data)
