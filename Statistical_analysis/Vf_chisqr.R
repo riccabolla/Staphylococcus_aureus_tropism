@@ -6,7 +6,7 @@ library(DescTools)
 
 data <- read_xlsx("Vf_analysis.xlsx")
 gene_variance <- apply(data, 2, var)
-genes_no_zero_variance <- which(gene_variance >= 0.013)
+genes_no_zero_variance <- which(gene_variance >= 0.01)
 
 gene_names <- names(genes_no_zero_variance)
 
