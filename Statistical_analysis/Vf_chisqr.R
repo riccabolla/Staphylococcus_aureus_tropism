@@ -4,7 +4,7 @@ library(ggplot2)
 library(DescTools)
 
 
-data <- read_xlsx("Vf_analysis.xlsx")
+data <- read_xlsx("Virulence_analysis.xlsx")
 gene_variance <- apply(data, 2, var)
 genes_no_zero_variance <- which(gene_variance >= 0.01)
 
@@ -12,7 +12,7 @@ gene_names <- names(genes_no_zero_variance)
 
 gene_presence_counts <- data %>%
   
-  pivot_longer(cols = -c(Sample, Source), names_to = "Gene", values_to = "Gene_Expression") %>%  # Reshape data
+  pivot_longer(cols = -c(Sample, Source), names_to = "Gene", values_to = "Gene_Expression") %>%  
   group_by(Gene, Source) %>%
   summarize(
     Presence_Count = sum(Gene_Expression == 1),
